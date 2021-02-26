@@ -58,7 +58,7 @@ mySum <- function(x){
   else if(!is.null(x)){
     for(data in x) {
       if(is.na(data)){
-        data <- min(x[!is.na(x)]) # min(x, na.rm=T)
+        data <- min(x, na.rm=T)
         warning("NA를 최저값으로 변경하여 처리함!!")
       }
       if(data%%2==0){evenSum <- evenSum+data} else{oddSum <- oddSum+data}
