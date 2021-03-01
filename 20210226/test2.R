@@ -9,3 +9,4 @@ table(test2)
 
 max(table(test2))
 which.max(table(test2))
+names(which.max(table(test2)))
