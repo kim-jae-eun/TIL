@@ -47,6 +47,7 @@ vmSum2 <- function(x){
 }
 
 vmSum2(1:10)
+vmSum2(list(1,2,3))
 vmSum2(LETTERS)
 vmSum2(matrix())
 
