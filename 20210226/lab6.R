@@ -35,7 +35,7 @@ vmSum(matrix())
 # 문제 3
 vmSum2 <- function(x){
   result <- 0
-  if(is.vector(x)) {
+  if(is.vector(x) && !is.list(x)) {
     if(is.numeric(x)) {
       result <- sum(x)
     } else {warning("숫자 벡터를 전달하숑!")}
