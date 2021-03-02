@@ -16,7 +16,7 @@ countEvenOdd(1:9)
 # 문제 2
 vmSum <- function(x){
   result <- 0
-  if(is.vector(x)) {
+  if(is.vector(x) && !is.list(x)) {
     if(is.numeric(x)) {
       result <- sum(x)
     } else {cat("숫자 벡터를 전달하숑!")}
