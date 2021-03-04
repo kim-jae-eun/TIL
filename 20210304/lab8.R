@@ -41,6 +41,7 @@ newstitle <- NULL; newspapername <- NULL; daumnews <- NULL;
 imsi <- read_html("https://news.daum.net/ranking/popular")
 t <- htmlParse(imsi)
 
+# 네이버 댓글과는 다르게, li[1]~li[50] 반복문 없이 그냥 li만 쓰면 다 끌어온다.
 newstitle <- xpathSApply(t,paste('//*[@id="mArticle"]/div[2]/ul[3]/li/div[2]/strong/a'), xmlValue)
 newspapername <- xpathSApply(t,paste('//*[@id="mArticle"]/div[2]/ul[3]/li/div[2]/strong/span'), xmlValue)
 page <- data.frame(newstitle, newspapername)
