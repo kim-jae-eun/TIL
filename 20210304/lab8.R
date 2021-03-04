@@ -32,3 +32,17 @@ for(i in 1:50) {
   daumnews <- rbind(daumnews, page)
 }
 write.csv(daumnews, "output/daumnews2.csv")
+
+
+# 방법 else
+library(XML)
+
+newstitle <- NULL; newspapername <- NULL; daumnews <- NULL;
+imsi <- read_html("https://news.daum.net/ranking/popular")
+t <- htmlParse(imsi)
+
+newstitle <- xpathSApply(t,paste('//*[@id="mArticle"]/div[2]/ul[3]/li/div[2]/strong/a'), xmlValue)
+newspapername <- xpathSApply(t,paste('//*[@id="mArticle"]/div[2]/ul[3]/li/div[2]/strong/span'), xmlValue)
+page <- data.frame(newstitle, newspapername)
+
+write.csv(page, "output/daumnews2.csv")
