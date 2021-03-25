@@ -1,0 +1,5 @@
+import requests
+
+r = requests.get('http://unico2013.dothome.co.kr/crawling/exercise.php', params={'category': '여행', 'page': 100})
+r.encoding = 'utf-8'
+print(r.text)
